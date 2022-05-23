@@ -38,13 +38,13 @@ class Player(GameSprite):
        keys = key.get_pressed()
        if keys[K_LEFT] and self.rect.y > 5:
            self.rect.y -= self.speed
-       if keys[K_RIGHT] and self.rect.y < 400:
+       if keys[K_RIGHT] and self.rect.y < 360:
            self.rect.y += self.speed
    def update1(self):
        keys = key.get_pressed()
        if keys[K_a] and self.rect.y > 5:
            self.rect.y -= self.speed
-       if keys[K_d] and self.rect.y < 400:
+       if keys[K_d] and self.rect.y < 360:
            self.rect.y += self.speed
  #метод "выстрел" (используем место игрока, чтобы создать там пулю)
    def fire(self):
@@ -56,8 +56,8 @@ win_height = 500
 display.set_caption("Shooter")
 window = display.set_mode((win_width, win_height))
 background = transform.scale(image.load(img_back), (win_width, win_height))
-ship = Player(img_hero, 610, win_height - 100, 80, 100, 10)
-ship1 = Player(img_enemy, 5, win_height - 100, 80, 100, 10)
+ship = Player(img_hero, 630, win_height - 80, 20, 130, 10)
+ship1 = Player(img_enemy, 5, win_height - 100, 20, 130, 10)
 finish = False
 #основной цикл игры:
 run = True
